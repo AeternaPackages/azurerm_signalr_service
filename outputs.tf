@@ -1,4 +1,9 @@
 # --- azurerm_signalr_service ---
+output "signalr_services_id" {
+  description = "Map of id values across all signalr_services, keyed the same as var.signalr_services"
+  value       = module.signalr_services.signalr_services_id
+}
+
 output "signalr_services_aad_auth_enabled" {
   description = "Map of aad_auth_enabled values across all signalr_services, keyed the same as var.signalr_services"
   value       = module.signalr_services.signalr_services_aad_auth_enabled
@@ -139,6 +144,11 @@ output "signalr_services_upstream_endpoint" {
 }
 
 # --- azurerm_signalr_service_custom_certificate ---
+output "signalr_service_custom_certificates_id" {
+  description = "Map of id values across all signalr_service_custom_certificates, keyed the same as var.signalr_service_custom_certificates"
+  value       = module.signalr_service_custom_certificates.signalr_service_custom_certificates_id
+}
+
 output "signalr_service_custom_certificates_certificate_version" {
   description = "Map of certificate_version values across all signalr_service_custom_certificates, keyed the same as var.signalr_service_custom_certificates"
   value       = module.signalr_service_custom_certificates.signalr_service_custom_certificates_certificate_version
@@ -160,6 +170,11 @@ output "signalr_service_custom_certificates_signalr_service_id" {
 }
 
 # --- azurerm_signalr_service_custom_domain ---
+output "signalr_service_custom_domains_id" {
+  description = "Map of id values across all signalr_service_custom_domains, keyed the same as var.signalr_service_custom_domains"
+  value       = module.signalr_service_custom_domains.signalr_service_custom_domains_id
+}
+
 output "signalr_service_custom_domains_domain_name" {
   description = "Map of domain_name values across all signalr_service_custom_domains, keyed the same as var.signalr_service_custom_domains"
   value       = module.signalr_service_custom_domains.signalr_service_custom_domains_domain_name
@@ -181,6 +196,11 @@ output "signalr_service_custom_domains_signalr_service_id" {
 }
 
 # --- azurerm_signalr_service_network_acl ---
+output "signalr_service_network_acls_id" {
+  description = "Map of id values across all signalr_service_network_acls, keyed the same as var.signalr_service_network_acls"
+  value       = module.signalr_service_network_acls.signalr_service_network_acls_id
+}
+
 output "signalr_service_network_acls_default_action" {
   description = "Map of default_action values across all signalr_service_network_acls, keyed the same as var.signalr_service_network_acls"
   value       = module.signalr_service_network_acls.signalr_service_network_acls_default_action
@@ -202,6 +222,11 @@ output "signalr_service_network_acls_signalr_service_id" {
 }
 
 # --- azurerm_signalr_shared_private_link_resource ---
+output "signalr_shared_private_link_resources_id" {
+  description = "Map of id values across all signalr_shared_private_link_resources, keyed the same as var.signalr_shared_private_link_resources"
+  value       = module.signalr_shared_private_link_resources.signalr_shared_private_link_resources_id
+}
+
 output "signalr_shared_private_link_resources_name" {
   description = "Map of name values across all signalr_shared_private_link_resources, keyed the same as var.signalr_shared_private_link_resources"
   value       = module.signalr_shared_private_link_resources.signalr_shared_private_link_resources_name
