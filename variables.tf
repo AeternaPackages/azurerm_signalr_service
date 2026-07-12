@@ -65,9 +65,9 @@ EOT
       capacity = number
       name     = string
     })
-    cors = optional(object({
+    cors = optional(list(object({
       allowed_origins = set(string)
-    }))
+    })))
     identity = optional(object({
       identity_ids = optional(set(string))
       type         = string
@@ -78,13 +78,13 @@ EOT
       http_request_logs_enabled = optional(bool) # Default: true
       messaging_logs_enabled    = optional(bool) # Default: true
     }))
-    upstream_endpoint = optional(object({
+    upstream_endpoint = optional(list(object({
       category_pattern          = list(string)
       event_pattern             = list(string)
       hub_pattern               = list(string)
       url_template              = string
       user_assigned_identity_id = optional(string)
-    }))
+    })))
     signalr_service_custom_certificates = optional(map(object({
       custom_certificate_id = string
       name                  = string
@@ -100,11 +100,11 @@ EOT
         allowed_request_types = optional(set(string))
         denied_request_types  = optional(set(string))
       })
-      private_endpoint = optional(object({
+      private_endpoint = optional(list(object({
         allowed_request_types = optional(set(string))
         denied_request_types  = optional(set(string))
         id                    = string
-      }))
+      })))
     })))
     signalr_shared_private_link_resources = optional(map(object({
       name               = string
