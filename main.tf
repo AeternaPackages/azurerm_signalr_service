@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.signalr_services : {
       for k2, v2 in coalesce(v1.signalr_service_custom_certificates, {}) :
       "${k1}/${k2}" => merge(v2, {
-        signalr_service_id = module.signalr_services.signalr_services["${k1}"].id
+        signalr_service_id = module.signalr_services.signalr_services_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.signalr_services : {
       for k2, v2 in coalesce(v1.signalr_service_custom_domains, {}) :
       "${k1}/${k2}" => merge(v2, {
-        signalr_service_id = module.signalr_services.signalr_services["${k1}"].id
+        signalr_service_id = module.signalr_services.signalr_services_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.signalr_services : {
       for k2, v2 in coalesce(v1.signalr_service_network_acls, {}) :
       "${k1}/${k2}" => merge(v2, {
-        signalr_service_id = module.signalr_services.signalr_services["${k1}"].id
+        signalr_service_id = module.signalr_services.signalr_services_id["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.signalr_services : {
       for k2, v2 in coalesce(v1.signalr_shared_private_link_resources, {}) :
       "${k1}/${k2}" => merge(v2, {
-        signalr_service_id = module.signalr_services.signalr_services["${k1}"].id
+        signalr_service_id = module.signalr_services.signalr_services_id["${k1}"]
       })
     }
   ]...)
