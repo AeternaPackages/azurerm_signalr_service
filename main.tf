@@ -39,30 +39,30 @@ locals {
 }
 
 module "signalr_services" {
-  source           = "git::https://github.com/AeternaModules/azurerm_signalr_service.git?ref=v4.81.0"
+  source           = "git::https://github.com/AeternaModules/azurerm_signalr_service.git?ref=v5.0.0"
   signalr_services = local.signalr_services
 }
 
 module "signalr_service_custom_certificates" {
-  source                              = "git::https://github.com/AeternaModules/azurerm_signalr_service_custom_certificate.git?ref=v4.81.0"
+  source                              = "git::https://github.com/AeternaModules/azurerm_signalr_service_custom_certificate.git?ref=v5.0.0"
   signalr_service_custom_certificates = local.signalr_service_custom_certificates
   depends_on                          = [module.signalr_services]
 }
 
 module "signalr_service_custom_domains" {
-  source                         = "git::https://github.com/AeternaModules/azurerm_signalr_service_custom_domain.git?ref=v4.81.0"
+  source                         = "git::https://github.com/AeternaModules/azurerm_signalr_service_custom_domain.git?ref=v5.0.0"
   signalr_service_custom_domains = local.signalr_service_custom_domains
   depends_on                     = [module.signalr_services]
 }
 
 module "signalr_service_network_acls" {
-  source                       = "git::https://github.com/AeternaModules/azurerm_signalr_service_network_acl.git?ref=v4.81.0"
+  source                       = "git::https://github.com/AeternaModules/azurerm_signalr_service_network_acl.git?ref=v5.0.0"
   signalr_service_network_acls = local.signalr_service_network_acls
   depends_on                   = [module.signalr_services]
 }
 
 module "signalr_shared_private_link_resources" {
-  source                                = "git::https://github.com/AeternaModules/azurerm_signalr_shared_private_link_resource.git?ref=v4.81.0"
+  source                                = "git::https://github.com/AeternaModules/azurerm_signalr_shared_private_link_resource.git?ref=v5.0.0"
   signalr_shared_private_link_resources = local.signalr_shared_private_link_resources
   depends_on                            = [module.signalr_services]
 }
